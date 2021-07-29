@@ -1,0 +1,13 @@
+.close {
+    position:relative;
+    right: 10;
+    top: 0;
+    padding: 1px 1px 1px 1px;
+  }
+  
+  .close:hover {
+    background-color: #9b0086;
+    color: white;
+  }
+  
+  
