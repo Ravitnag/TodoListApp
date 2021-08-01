@@ -7,7 +7,7 @@ constructor(props)
     super (props)
     this.state = (
         {
-            remove_task: ''
+            class_remove_task: ''
         }
     )
 }
@@ -15,9 +15,9 @@ constructor(props)
 handleClick=e=>{
     this.props.doneFunc(this.props.id)
     if(this.props.done)
-    this.setState({remove_task: 'line-through'})
+    this.setState({class_remove_task: 'checked'})
     else
-    this.setState({remove_task: ''})
+    this.setState({class_remove_task: ''})
 }
 handleClickX=e=>{
     this.props.removeFunc(this.props.id)
@@ -26,13 +26,12 @@ handleClickX=e=>{
 render(){
 
     return(
-        <div>
-           <li> <lable style={{textDecorationLine: this.state.remove_task}} onClick={this.handleClick}>{this.props.title}</lable>
-         <label>&nbsp;&nbsp;</label>
-         <label onClick={this.handleClickX} Class="close">X</label></li>
-           
-        </div>
-         
+                <li class={this.state.class_remove_task}> 
+                <div>
+                    <span onClick={this.handleClick}>{this.props.title} </span>
+                  <span onClick={this.handleClickX} Class="close">X</span>
+                </div>
+                </li>     
     )
 }
 }

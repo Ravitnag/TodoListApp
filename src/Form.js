@@ -27,10 +27,8 @@ export default class Form extends React.Component{
     render() {
         return (
             <div>
-            <form>
-                <input type="text" ref={(input) => { this.nameInput = input; }} value={this.state.text} onChange={this.handlechange} />  
-                <input type="submit" value="add task" onClick={this.callToSubmit}/>
-             </form>
+                <input placeholder="my next task" type="text" ref={(input) => { this.nameInput = input; }} value={this.state.text} onChange={this.handlechange} />  
+                <span class="addBtn" type="submit" value="add task" onClick={this.callToSubmit}> add task </span>
              </div>
         );
     }
